@@ -1,0 +1,15 @@
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.theme-toggle:hover { box-shadow: 0 6px 18px rgba(2,6,23,0.12); }
+.theme-toggle:active { box-shadow: none; }
+.theme-toggle .icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+

@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Margherita Pizza", "category": "Pizza", "price": 9.5, "rating": 4.5, "inStock": true, "tags": ["classic","vegetarian"] },
+  { "id": 2, "name": "Sushi Deluxe", "category": "Sushi", "price": 18.0, "rating": 4.8, "inStock": true, "tags": ["seafood"] },
+  { "id": 3, "name": "Caesar Salad", "category": "Salad", "price": 7.0, "rating": 4.2, "inStock": false, "tags": ["light","starter"] },
+  { "id": 4, "name": "Cheeseburger", "category": "Burgers", "price": 11.5, "rating": 4.3, "inStock": true, "tags": ["classic"] },
+  { "id": 5, "name": "Tacos Al Pastor", "category": "Tacos", "price": 8.0, "rating": 4.6, "inStock": true, "tags": ["spicy"] },
+  { "id": 6, "name": "Pad Thai", "category": "Noodles", "price": 10.5, "rating": 4.4, "inStock": true, "tags": ["thai"] },
+  { "id": 7, "name": "Chocolate Cake", "category": "Dessert", "price": 6.0, "rating": 4.9, "inStock": true, "tags": ["sweet","baked"] },
+  { "id": 8, "name": "Greek Yogurt", "category": "Breakfast", "price": 4.0, "rating": 4.1, "inStock": false, "tags": ["healthy"] },
+  { "id": 9, "name": "Ramen Bowl", "category": "Noodles", "price": 12.0, "rating": 4.7, "inStock": true, "tags": ["hot","noodles"] },
+  { "id": 10, "name": "Pancakes", "category": "Breakfast", "price": 5.5, "rating": 4.0, "inStock": true, "tags": ["sweet"] }
+]
