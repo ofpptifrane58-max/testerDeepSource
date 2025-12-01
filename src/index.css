@@ -29,7 +29,8 @@
 }
 
 /* Dark theme overrides when attribute is set */
-:root[data-theme='dark'], :root[data-theme='dark'] * {
+:root[data-theme="dark"],
+:root[data-theme="dark"] * {
   --bg: #364a8a;
   --surface: #0f1724;
   --card: #0b1220;
@@ -68,9 +69,15 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
-a:hover { color: var(--accent); }
+a:hover {
+  color: var(--accent);
+}
 
-h1 { font-size: 2rem; line-height: 1.15; margin: 0; }
+h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0;
+}
 
 button {
   border-radius: 10px;
@@ -82,7 +89,13 @@ button {
   background-color: var(--btn-bg);
   color: var(--text);
   cursor: pointer;
-  transition: transform 120ms ease, box-shadow 120ms ease;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
 }
-button:hover { transform: translateY(-1px); }
-button:active { transform: translateY(0); }
+button:hover {
+  transform: translateY(-1px);
+}
+button:active {
+  transform: translateY(0);
+}

@@ -22,9 +22,15 @@
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--text);
-  transition: box-shadow 150ms ease, transform 120ms ease;
+  transition:
+    box-shadow 150ms ease,
+    transform 120ms ease;
 }
-.controls input:focus { box-shadow: 0 6px 18px rgba(2,6,23,0.06); outline: none; transform: translateY(-1px); }
+.controls input:focus {
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  outline: none;
+  transform: translateY(-1px);
+}
 
 .controls select {
   padding: 0.5rem 0.75rem;
@@ -47,11 +53,16 @@
   padding: 0.85rem;
   border-radius: 12px;
   background: var(--card);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
   border: 1px solid var(--border);
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
 }
-.food-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.09); }
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.09);
+}
 
 .food-card .emoji {
   font-size: 2rem;
@@ -59,9 +70,22 @@
   text-align: center;
 }
 
-.food-card h3 { margin: 0 0 0.25rem 0; }
+.food-card h3 {
+  margin: 0 0 0.25rem 0;
+}
 
-.food-card .category { margin: 0; font-size: 0.85rem; color: var(--muted); }
-.food-card .desc { margin: 0.35rem 0 0 0; color: var(--muted); font-size: 0.9rem; }
+.food-card .category {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.food-card .desc {
+  margin: 0.35rem 0 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 
-.no-results { grid-column: 1 / -1; color: var(--muted); }
+.no-results {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
