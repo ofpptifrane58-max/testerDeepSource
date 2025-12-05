@@ -112,7 +112,7 @@ select:focus {
 textarea {
   resize: vertical;
   min-height: 100px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 select {
@@ -208,7 +208,7 @@ input[type="color"] {
 }
 
 .color-value {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: 600;
   color: var(--accent);
 }

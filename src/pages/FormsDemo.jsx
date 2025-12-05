@@ -1,76 +1,79 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import '../styles/FormsDemo.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "../styles/FormsDemo.css";
 
 export default function FormsDemo() {
   const [formData, setFormData] = useState({
-    text: '',
-    email: '',
-    password: '',
-    number: '',
+    text: "",
+    email: "",
+    password: "",
+    number: "",
     range: 50,
     checkbox: false,
     checkboxMultiple: [],
-    radio: '',
-    select: '',
+    radio: "",
+    select: "",
     multiSelect: [],
-    textarea: '',
-    date: '',
-    time: '',
-    datetime: '',
-    month: '',
-    week: '',
-    color: '#6366f1',
+    textarea: "",
+    date: "",
+    time: "",
+    datetime: "",
+    month: "",
+    week: "",
+    color: "#6366f1",
     file: null,
-    url: '',
-    tel: '',
-    search: '',
-    hidden: 'hidden-value',
+    url: "",
+    tel: "",
+    search: "",
+    hidden: "hidden-value",
   });
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
+  const [message, setMessage] = useState({ type: "", text: "" });
 
   const handleChange = (e) => {
     const { name, type, value, checked, files } = e.target;
 
-    if (type === 'checkbox') {
-      if (name === 'checkbox') {
-        setFormData(prev => ({ ...prev, checkbox: checked }));
-      } else if (name === 'checkboxMultiple') {
-        setFormData(prev => ({
+    if (type === "checkbox") {
+      if (name === "checkbox") {
+        setFormData((prev) => ({ ...prev, checkbox: checked }));
+      } else if (name === "checkboxMultiple") {
+        setFormData((prev) => ({
           ...prev,
           checkboxMultiple: checked
             ? [...prev.checkboxMultiple, value]
-            : prev.checkboxMultiple.filter(v => v !== value),
+            : prev.checkboxMultiple.filter((v) => v !== value),
         }));
       }
-    } else if (type === 'radio') {
-      setFormData(prev => ({ ...prev, [name]: value }));
-    } else if (type === 'file') {
-      setFormData(prev => ({ ...prev, [name]: files?.[0] || null }));
-    } else if (name === 'multiSelect') {
-      const selectedValues = Array.from(e.target.selectedOptions, option => option.value);
-      setFormData(prev => ({ ...prev, multiSelect: selectedValues }));
+    } else if (type === "radio") {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    } else if (type === "file") {
+      setFormData((prev) => ({ ...prev, [name]: files?.[0] || null }));
+    } else if (name === "multiSelect") {
+      const selectedValues = Array.from(
+        e.target.selectedOptions,
+        (option) => option.value,
+      );
+      setFormData((prev) => ({ ...prev, multiSelect: selectedValues }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage({ type: '', text: '' });
+    setMessage({ type: "", text: "" });
 
     try {
       // Créer FormData pour traiter les fichiers
       const submitData = new FormData();
-      
+
       // Ajouter tous les champs normaux
-      Object.keys(formData).forEach(key => {
-        if (key === 'file') {
+      Object.keys(formData).forEach((key) => {
+        if (key === "file") {
           if (formData.file) {
-            submitData.append('file', formData.file);
+            submitData.append("file", formData.file);
           }
         } else if (Array.isArray(formData[key])) {
           submitData.append(key, JSON.stringify(formData[key]));
@@ -80,23 +83,27 @@ export default function FormsDemo() {
       });
 
       // Utiliser axios pour envoyer les données
-      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', submitData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/posts",
+        submitData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         },
-      });
+      );
 
       setMessage({
-        type: 'success',
+        type: "success",
         text: `✅ Formulaire soumis avec succès! ID: ${response.data.id}`,
       });
-      console.log('Response from server:', response.data);
+      console.log("Response from server:", response.data);
     } catch (error) {
       setMessage({
-        type: 'error',
+        type: "error",
         text: `❌ Erreur lors de la soumission: ${error.message}`,
       });
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
     }
@@ -104,28 +111,28 @@ export default function FormsDemo() {
 
   const handleReset = () => {
     setFormData({
-      text: '',
-      email: '',
-      password: '',
-      number: '',
+      text: "",
+      email: "",
+      password: "",
+      number: "",
       range: 50,
       checkbox: false,
       checkboxMultiple: [],
-      radio: '',
-      select: '',
+      radio: "",
+      select: "",
       multiSelect: [],
-      textarea: '',
-      date: '',
-      time: '',
-      datetime: '',
-      month: '',
-      week: '',
-      color: '#6367f1',
+      textarea: "",
+      date: "",
+      time: "",
+      datetime: "",
+      month: "",
+      week: "",
+      color: "#6367f1",
       file: null,
-      url: '',
-      tel: '',
-      search: '',
-      hidden: 'hidden-value',
+      url: "",
+      tel: "",
+      search: "",
+      hidden: "hidden-value",
     });
   };
 
@@ -133,7 +140,9 @@ export default function FormsDemo() {
     <div className="forms-demo">
       <div className="forms-header">
         <h1>📝 Tous les types de formulaires HTML</h1>
-        <p>✨ Exemple complet avec tous les types d'inputs disponibles en HTML5.</p>
+        <p>
+          ✨ Exemple complet avec tous les types d'inputs disponibles en HTML5.
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="demo-form">
@@ -233,7 +242,9 @@ export default function FormsDemo() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="range">Range (0-100): <span>{formData.range}</span></label>
+            <label htmlFor="range">
+              Range (0-100): <span>{formData.range}</span>
+            </label>
             <input
               type="range"
               id="range"
@@ -264,20 +275,24 @@ export default function FormsDemo() {
           </div>
 
           <div className="form-group">
-            <legend className="sub-legend">Sélectionnez plusieurs options:</legend>
+            <legend className="sub-legend">
+              Sélectionnez plusieurs options:
+            </legend>
             <div className="checkbox-group">
-              {['Option 1', 'Option 2', 'Option 3', 'Option 4'].map((opt, i) => (
-                <label key={i}>
-                  <input
-                    type="checkbox"
-                    name="checkboxMultiple"
-                    value={opt}
-                    checked={formData.checkboxMultiple.includes(opt)}
-                    onChange={handleChange}
-                  />
-                  {opt}
-                </label>
-              ))}
+              {["Option 1", "Option 2", "Option 3", "Option 4"].map(
+                (opt, i) => (
+                  <label key={i}>
+                    <input
+                      type="checkbox"
+                      name="checkboxMultiple"
+                      value={opt}
+                      checked={formData.checkboxMultiple.includes(opt)}
+                      onChange={handleChange}
+                    />
+                    {opt}
+                  </label>
+                ),
+              )}
             </div>
           </div>
         </fieldset>
@@ -288,7 +303,7 @@ export default function FormsDemo() {
 
           <div className="form-group">
             <div className="radio-group">
-              {['Option A', 'Option B', 'Option C'].map((opt, i) => (
+              {["Option A", "Option B", "Option C"].map((opt, i) => (
                 <label key={i}>
                   <input
                     type="radio"
@@ -328,7 +343,9 @@ export default function FormsDemo() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="multiSelect">Sélectionnez plusieurs options (Ctrl+Click):</label>
+            <label htmlFor="multiSelect">
+              Sélectionnez plusieurs options (Ctrl+Click):
+            </label>
             <select
               id="multiSelect"
               name="multiSelect"
@@ -465,9 +482,14 @@ export default function FormsDemo() {
         {/* Buttons */}
         <div className="form-actions">
           <button type="submit" className="btn btn-primary" disabled={loading}>
-            {loading ? '⏳ Envoi en cours...' : '📤 Soumettre avec Axios'}
+            {loading ? "⏳ Envoi en cours..." : "📤 Soumettre avec Axios"}
           </button>
-          <button type="reset" onClick={handleReset} className="btn btn-secondary" disabled={loading}>
+          <button
+            type="reset"
+            onClick={handleReset}
+            className="btn btn-secondary"
+            disabled={loading}
+          >
             🔄 Réinitialiser
           </button>
         </div>
@@ -483,12 +505,18 @@ export default function FormsDemo() {
       {/* Display current form state */}
       <div className="form-state">
         <h3>État actuel du formulaire:</h3>
-        <pre>{JSON.stringify(formData, (key, value) => {
-          if (key === 'file' && value) {
-            return `[File: ${value.name}]`;
-          }
-          return value;
-        }, 2)}</pre>
+        <pre>
+          {JSON.stringify(
+            formData,
+            (key, value) => {
+              if (key === "file" && value) {
+                return `[File: ${value.name}]`;
+              }
+              return value;
+            },
+            2,
+          )}
+        </pre>
       </div>
     </div>
   );

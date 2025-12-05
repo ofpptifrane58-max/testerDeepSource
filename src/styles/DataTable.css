@@ -11,15 +11,20 @@
   margin-bottom: 1rem;
 }
 
-.table-header h2 { margin: 0; }
+.table-header h2 {
+  margin: 0;
+}
 
-.table-wrap { overflow: auto; border-radius: 10px; }
+.table-wrap {
+  overflow: auto;
+  border-radius: 10px;
+}
 
 .modern-table {
   width: 100%;
   border-collapse: collapse;
   background: var(--card);
-  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.06);
 }
 
 .modern-table thead th {
@@ -39,7 +44,10 @@
   vertical-align: middle;
 }
 
-.modern-table tbody tr:hover { background: rgba(99,102,241,0.03); transform: translateY(-1px); }
+.modern-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.03);
+  transform: translateY(-1px);
+}
 
 .emoji-cell {
   font-size: 1.5rem;
@@ -55,13 +63,31 @@
   margin-top: 8px;
 }
 
-.pagination { display: flex; gap: 8px; align-items: center; }
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-.pagination button { padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; }
+.pagination button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+}
 
-.muted { color: var(--muted); }
-.error { color: #ef4444; }
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: #ef4444;
+}
 
 @media (max-width: 640px) {
-  .modern-table thead th, .modern-table tbody td { padding: 10px; font-size: 0.9rem; }
+  .modern-table thead th,
+  .modern-table tbody td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
 }
