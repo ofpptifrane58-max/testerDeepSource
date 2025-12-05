@@ -14,12 +14,14 @@ class App1 extends Component {
   // methode de gestion des cycle de vie
   componentDidMount() {
     const url = "https://jsonplaceholder.typicode.com/todos/1";
-    axios.get(url).then((resp) => this.setState({
-      userid: resp.data.userId,
-      id: resp.data.id,
-      title: resp.data.title,
-      completed: resp.data.completed,
-    }));
+    axios.get(url).then((resp) =>
+      this.setState({
+        userid: resp.data.userId,
+        id: resp.data.id,
+        title: resp.data.title,
+        completed: resp.data.completed,
+      }),
+    );
   }
   // render the result
   render() {
