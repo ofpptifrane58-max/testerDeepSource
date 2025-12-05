@@ -39,6 +39,12 @@ function App() {
             >
               🔗 API brute
             </button>
+            <button
+              className={`nav-btn ${currentPage === 'apiRz' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('apiRz')}
+            >
+              old desply rz
+            </button>
           </div>
         </div>
         <div>
@@ -51,6 +57,7 @@ function App() {
         {currentPage === 'forms' && <FormsDemo />}
         {currentPage === 'data' && <DataTable />}
         {currentPage === 'api' && <DataApiView />}
+        {currentPage === 'apiRz' && <div style={{ padding: 20 }}><h2>Old DataApiView rz</h2><p>Ancienne version de l'affichage des données brutes de l'API.</p></div>}
       </main>
 
       <footer style={{ marginTop: 24, textAlign: 'center', color: 'var(--muted)' }}>

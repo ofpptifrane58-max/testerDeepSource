@@ -4,7 +4,7 @@ import '../styles/DataTable.css';
 
 export default function DataTable() {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState({ key: 'id', dir: 'asc' });
@@ -13,8 +13,6 @@ export default function DataTable() {
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
-    setError('');
 
     axios.get('/data.json')
       .then(res => {
