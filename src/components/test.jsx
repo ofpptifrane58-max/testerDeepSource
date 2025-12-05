@@ -17,12 +17,14 @@ class App1 extends Component {
     const url = "https://jsonplaceholder.typicode.com/todos/1";
     useEffect(() => {
       async function fetchData() {
-        await axios.get(url).then((resp) => this.useState({
-          userid: resp.data.userId,
-          id: resp.data.id,
-          title: resp.data.title,
-          completed: resp.data.completed,
-        }));
+        await axios.get(url).then((resp) =>
+          this.useState({
+            userid: resp.data.userId,
+            id: resp.data.id,
+            title: resp.data.title,
+            completed: resp.data.completed,
+          }),
+        );
       }
       fetchData();
     }, []);
@@ -50,4 +52,3 @@ class App1 extends Component {
 }
 
 export default App1;
-
