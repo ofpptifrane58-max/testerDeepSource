@@ -132,14 +132,14 @@ export default function FormsDemo() {
   return (
     <div className="forms-demo">
       <div className="forms-header">
-        <h1>Tous les types de formulaires HTML</h1>
-        <p>Exemple complet avec tous les types d'inputs disponibles en HTML5.</p>
+        <h1>📝 Tous les types de formulaires HTML</h1>
+        <p>✨ Exemple complet avec tous les types d'inputs disponibles en HTML5.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="demo-form">
         {/* Text Input */}
         <fieldset>
-          <legend>Inputs texte</legend>
+          <legend>📝 Inputs texte</legend>
 
           <div className="form-group">
             <label htmlFor="text">Text:</label>
@@ -216,7 +216,7 @@ export default function FormsDemo() {
 
         {/* Number & Range */}
         <fieldset>
-          <legend>Nombres & Plages</legend>
+          <legend>🔢 Nombres & Plages</legend>
 
           <div className="form-group">
             <label htmlFor="number">Nombre:</label>
@@ -248,7 +248,7 @@ export default function FormsDemo() {
 
         {/* Checkboxes */}
         <fieldset>
-          <legend>Boîtes à cocher (Checkboxes)</legend>
+          <legend>☑️ Boîtes à cocher (Checkboxes)</legend>
 
           <div className="form-group checkbox-group">
             <label htmlFor="checkbox">
@@ -284,7 +284,7 @@ export default function FormsDemo() {
 
         {/* Radio */}
         <fieldset>
-          <legend>Boutons radio</legend>
+          <legend>🔘 Boutons radio</legend>
 
           <div className="form-group">
             <div className="radio-group">
@@ -306,7 +306,7 @@ export default function FormsDemo() {
 
         {/* Select */}
         <fieldset>
-          <legend>Listes déroulantes</legend>
+          <legend>📋 Listes déroulantes</legend>
 
           <div className="form-group">
             <label htmlFor="select">Sélectionnez une option:</label>
@@ -348,7 +348,7 @@ export default function FormsDemo() {
 
         {/* Textarea */}
         <fieldset>
-          <legend>Zone de texte</legend>
+          <legend>📄 Zone de texte</legend>
 
           <div className="form-group">
             <label htmlFor="textarea">Textarea:</label>
@@ -365,7 +365,7 @@ export default function FormsDemo() {
 
         {/* Date & Time */}
         <fieldset>
-          <legend>Dates & Heures</legend>
+          <legend>📅 Dates & Heures</legend>
 
           <div className="form-group">
             <label htmlFor="date">Date:</label>
@@ -425,7 +425,7 @@ export default function FormsDemo() {
 
         {/* Color */}
         <fieldset>
-          <legend>Couleur</legend>
+          <legend>🎨 Couleur</legend>
 
           <div className="form-group">
             <label htmlFor="color">Sélectionnez une couleur:</label>
@@ -444,7 +444,7 @@ export default function FormsDemo() {
 
         {/* File */}
         <fieldset>
-          <legend>Fichier</legend>
+          <legend>📁 Fichier</legend>
 
           <div className="form-group">
             <label htmlFor="file">Télécharger un fichier:</label>
@@ -468,7 +468,7 @@ export default function FormsDemo() {
             {loading ? '⏳ Envoi en cours...' : '📤 Soumettre avec Axios'}
           </button>
           <button type="reset" onClick={handleReset} className="btn btn-secondary" disabled={loading}>
-            Réinitialiser
+            🔄 Réinitialiser
           </button>
         </div>
 

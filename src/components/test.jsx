@@ -1,6 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import { Component, useEffect, useState } from "react";
 
 class App1 extends Component {
   constructor(props) {
@@ -15,17 +14,12 @@ class App1 extends Component {
   // methode de gestion des cycle de vie
   componentDidMount() {
     const url = "https://jsonplaceholder.typicode.com/todos/1";
-    useEffect(() => {
-      async function fetchData() {
-        await axios.get(url).then((resp) => this.useState({
-          userid: resp.data.userId,
-          id: resp.data.id,
-          title: resp.data.title,
-          completed: resp.data.completed,
-        }));
-      }
-      fetchData();
-    }, []);
+    axios.get(url).then((resp) => this.setState({
+      userid: resp.data.userId,
+      id: resp.data.id,
+      title: resp.data.title,
+      completed: resp.data.completed,
+    }));
   }
   // render the result
   render() {
@@ -50,4 +44,3 @@ class App1 extends Component {
 }
 
 export default App1;
-

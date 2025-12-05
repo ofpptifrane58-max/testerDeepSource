@@ -178,6 +178,9 @@ input[type="range"]::-moz-range-thumb:hover {
   gap: 0.5rem;
   cursor: pointer;
   font-weight: 400;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 

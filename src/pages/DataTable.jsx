@@ -82,6 +82,7 @@ export default function DataTable() {
             <table className="modern-table">
               <thead>
                 <tr>
+                  <th>Emoji</th>
                   <th onClick={() => toggleSort('id')}>ID {sortBy.key === 'id' ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''}</th>
                   <th onClick={() => toggleSort('name')}>Nom {sortBy.key === 'name' ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''}</th>
                   <th onClick={() => toggleSort('category')}>Catégorie {sortBy.key === 'category' ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''}</th>
@@ -94,6 +95,7 @@ export default function DataTable() {
               <tbody>
                 {paged.map(row => (
                   <tr key={row.id}>
+                    <td className="emoji-cell">{row.emoji}</td>
                     <td>{row.id}</td>
                     <td>{row.name}</td>
                     <td>{row.category}</td>
@@ -104,7 +106,7 @@ export default function DataTable() {
                   </tr>
                 ))}
                 {paged.length === 0 && (
-                  <tr><td colSpan={7} className="muted">Aucun résultat</td></tr>
+                  <tr><td colSpan={8} className="muted">Aucun résultat</td></tr>
                 )}
               </tbody>
             </table>

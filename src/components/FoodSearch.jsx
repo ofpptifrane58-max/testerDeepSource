@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import foods from "../data/foods";
+import foods from "../../public/data.json";
 import "./FoodSearch.css";
 
 export default function FoodSearch() {
