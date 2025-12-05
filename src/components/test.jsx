@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class App1 extends Component {
-  constructor(props) {
-    super(props);
+  constructor(_props) {
+    super(_props);
     this.state = {
       userid: 1,
       id: 1,

@@ -91,12 +91,12 @@ export default function FormsDemo() {
         text: `✅ Formulaire soumis avec succès! ID: ${response.data.id}`,
       });
       console.log('Response from server:', response.data);
-    } catch (error) {
+    } catch (_error) {
       setMessage({
         type: 'error',
-        text: `❌ Erreur lors de la soumission: ${error.message}`,
+        text: `❌ Erreur lors de la soumission: ${_error.message}`,
       });
-      console.error('Error submitting form:', error);
+      console.error('Error submitting form:', _error);
     } finally {
       setLoading(false);
     }
